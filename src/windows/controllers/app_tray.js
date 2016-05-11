@@ -16,12 +16,9 @@ class AppTray {
     this.splashWindow = splashWindow;
     this.wechatWindow = wechatWindow;
 
-    let image;
-    if (process.platform == "linux") {
-      image = nativeImage.createFromPath(path.join(__dirname, '../../../assets/icon.png'));
-    } else {
-      image = nativeImage.createFromPath(path.join(__dirname, '../../../assets/status_bar.png'));
-    }
+    let image = nativeImage.createFromPath(
+      path.join(__dirname, Common.getDict('TRAY_ICONS', process.platform))
+    );
     image.setTemplateImage(true);
 
     this.tray = new electron.Tray(image);
