@@ -3,7 +3,6 @@
  */
 "use strict";
 
-const path = require('path');
 const electron = require('electron');
 const app = electron.app;
 const Menu = electron.Menu;
@@ -17,7 +16,7 @@ class AppTray {
     this.wechatWindow = wechatWindow;
 
     let image = nativeImage.createFromPath(
-      path.join(__dirname, Common.getDict('TRAY_ICONS', process.platform))
+      Common.getDict('TRAY_ICONS', process.platform)
     );
     image.setTemplateImage(true);
 

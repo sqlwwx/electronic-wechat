@@ -38,7 +38,7 @@ class WeChatWindow {
       show: false,
       frame: true,
       autoHideMenuBar: true,
-      icon: path.join(__dirname, '../../../assets/icon.png'),
+      icon: Common.ICON,
       titleBarStyle: 'hidden-inset',
       webPreferences: {
         javascript: true,

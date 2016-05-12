@@ -2,6 +2,8 @@
  * Created by Zhongyi on 3/26/16.
  */
 "use strict";
+const path = require('path');
+
 class Common {
   static getDict(map, key) {
     if (typeof map === 'string') {
@@ -48,8 +50,10 @@ Common.MENTION_MENU_HINT_TEXT = "选择回复的人:";
 Common.MESSAGE_PREVENT_RECALL = "阻止了一次撤回";
 Common.EMOJI_MAXIUM_SIZE = 120;
 
+Common.ICON = path.join(__dirname, '../assets/icon.png')
+
 Common.TRAY_ICONS = {
-  'linux': '../../../assets/icon.png',
-  'other': '../../../assets/status_bar.png'
+  'linux': Common.ICON,
+  'other': path.join(__dirname, '../assets/status_bar.png')
 }
 module.exports = Common;
